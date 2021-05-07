@@ -16,6 +16,10 @@ model:
     lr: 3e-4
 
 trainer:
-  max_epochs: 10
-  fast_dev_run: True
+  max_epochs: 1
+  fast_dev_run: False
+
+defaults:
+- hydra/job_logging: colorlog
+- hydra/hydra_logging: colorlog
 

@@ -12,10 +12,10 @@ from pathlib import Path
 
 import hydra
 from hydra.utils import get_original_cwd
-from omegaconf import DictConfig
+from omegaconf import DictConfig, OmegaConf
 
-# import logger
-# logger = logger.getLogger(__name__)
+import logging
+logger = logging.getLogger(__name__)
 
 class ESC50Dataset(torch.utils.data.Dataset):
     
@@ -110,7 +110,7 @@ class AudioNet(pl.LightningModule):
 @hydra.main(config_path='configs', config_name='default')
 def train(cfg: DictConfig):
 
-    # logger.info(OmegaConf.to_yaml(cfg))
+    logger.info(OmegaConf.to_yaml(cfg))
 
     path = Path(get_original_cwd() / Path(cfg.data.path))
     train_data = ESC50Dataset(path=path, folds=cfg.data.train_folds)
