@@ -2,3 +2,5 @@ data/*
 .DS_Store
 *logs/*
 .ipynb_checkpoints/
+.vscode/*
+outputs/*
