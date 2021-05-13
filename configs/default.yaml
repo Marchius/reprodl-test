@@ -17,7 +17,7 @@ model:
 
 trainer:
   max_epochs: 1
-  fast_dev_run: False
+  fast_dev_run: True
 
 defaults:
 - hydra/job_logging: colorlog
